@@ -25,8 +25,8 @@ foodDb =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
             ResultSet rs=st.executeQuery("select * from menu");
   
    
-   int arr[]=new int[15];
-   int arr1[]=new int[14];
+   int arr[]=new int[75];
+   int arr1[]=new int[75];
    int i=1;
    while(rs.next()){
        arr1[i]=rs.getInt(1);
@@ -38,7 +38,7 @@ foodDb =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Foodies | Catalogue</title>
+<title>Foodies | Specials</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -78,9 +78,8 @@ $(document).ready(function () {
         <nav>
           <ul class="menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="new1.html">Admin</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a class="active" href="catalogue.jsp">Catalogue </a></li>
+            <li><a href="menu.jsp">Menu</a></li>
+            <li><a class="active" href="catalogue.jsp">Specials </a></li>
             <li><a href="faq.html">FAQ </a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -91,11 +90,11 @@ $(document).ready(function () {
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>Foodies Welcome <span> Taste the difference </span></h2>
+          <h2><span>OUR SPECIALS</span></h2>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 <!--==============================content================================-->
 <%
  ShoppingCart cart = (ShoppingCart)session.getAttribute("examples.bookstore.cart");
@@ -112,17 +111,14 @@ String foodId = request.getParameter("ADD");
 			<p><h3><font color=\"#ff0000\">You just added <i><%=a%></i> to your shopping cart.</font></h3>
 			<%
 			}
-			 if (cart.getNumberOfItems() > 0) {
-			 %>
-                        <p><strong><a href='showcart.jsp'>Check Shopping Cart</a>      <a href="cashier.jsp">Order Your Food</a></strong></p>
-			 <%
-			 }
+			 
 	
 %>
+                        <p align="center"><a href='showcart.jsp'><img src="images/cart.png" alt="cart" width=50" height="50"/></a> 
 <section id="content">
   <div class="main">
     <div class="container">
-      <h3 class="prev-indent-bot">Catalogue</h3>
+      <h3 align="center" class="prev-indent-bot">Specials</h3>
       <div id="slider-2">
         <div>
           <div class="p4">
@@ -131,25 +127,25 @@ String foodId = request.getParameter("ADD");
             <p class="p1">A Hamburger topped with cheese  and include toppings,such as lettuce,<br>
               tomato,mustard and mayonnaise</p>
             <p class="p2"><strong class="color-2">Price: <%= arr[1]%></strong></p>
-            <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[1]%>'>Add to Cart</a> </div>
+            <a href='catalogue.jsp?ADD=<%=arr1[1]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
           <figure><img src="img3.jpeg" alt=""></a></figure>
           <h5>Sandwich </h5>
           <p class="p1">Consisting of vegetables,sliced cheese,placed between slices of bread and having cheese,lettuce and tomato.<br>
             </p>
           <p class="p2"><strong class="color-2">Price: <%= arr[2]%></strong></p>
-         <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[2]%>'>Add to Cart</a> </div>
+         <a href='catalogue.jsp?ADD=<%=arr1[2]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
         <div>
           <div class="p4">
             <figure><img src="img4.jpeg" alt=""></figure>
             <h5>Chow mein</h5>
             <p class="p1">Contains deep-fried crunchy golden noodles,green peppers,pea pods,water chestnuts, shrimp.</p>
             <p class="p2"><strong class="color-2">Price: <%= arr[3]%></strong></p>
-            <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[3]%>'>Add to Cart</a> </div>
+            <a href='catalogue.jsp?ADD=<%=arr1[3]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
           <figure><img src="img5.jpeg" alt=""></figure>
           <h5>Hotdog</h5>
           <p class="p1"> Grilled or steamed and served in a partially sliced bun as a sandwich<br>with cheese</p>
           <p class="p2"><strong class="color-2">Price: <%= arr[4]%></strong></p>
-          <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[4]%>'>Add to Cart</a> </div>
+          <a href='catalogue.jsp?ADD=<%=arr1[4]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
         <div>
           <div class="p4">
             <figure><img src="img6.jpeg" alt=""></figure>
@@ -157,25 +153,25 @@ String foodId = request.getParameter("ADD");
             <p class="p1"> Fried or baked dish with a savoury filling,such as spiced potatoes, onions, peas<br>
               </p>
             <p class="p2"><strong class="color-2">Price: <%= arr[5]%></strong></p>
-            <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[5]%>'>Add to Cart</a> </div>
+            <a href='catalogue.jsp?ADD=<%=arr1[5]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
           <figure><img src="img7.jpeg" alt=""></figure>
           <h5>Chilli Potato</h5>
           <p class="p1">A chinese recipe Filed in Appetizers<br>and snacks, served with red chilli<br>sauce.
             </p>
           <p class="p2"><strong class="color-2">Price: <%= arr[6]%></strong></p>
-          <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[6]%>'>Add to Cart</a> </div>
+          <a href='catalogue.jsp?ADD=<%=arr1[6]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
         <div>
           <div class="p4">
             <figure><img src="img8.jpeg" alt=""></figure>
             <h5>Masala Dosa</h5>
             <p class="p1">Stuffed dosa with a lightly cooked filling of potatoes, fried onions and spices<br>with sambhar</p>
             <p class="p2"><strong class="color-2">Price: <%= arr[7]%></strong></p>
-            <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[7]%>'>Add to Cart</a> </div>
+            <a href='catalogue.jsp?ADD=<%=arr1[7]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
           <figure><img src="img9.jpeg" alt=""></figure>
           <h5>White Sauce Pasta</h5>
           <p class="p1">Enjoy the penne pasta tossed in white sauce in this delightful Penne in white sauce recipe.</p>
           <p class="p2"><strong class="color-2">Price: <%= arr[8]%></strong></p>
-          <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[8]%>'>Add to Cart</a> </div>
+          <a href='catalogue.jsp?ADD=<%=arr1[8]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
         <div>
           <div class="p4">
             <figure><img src="img10.jpeg" alt=""></figure>
@@ -183,24 +179,20 @@ String foodId = request.getParameter("ADD");
             <p class="p1">Small pieces of soya baked using skewers in a clay oven after marinating in spices<br>
               </p>
             <p class="p2"><strong class="color-2">Price: <%= arr[9]%></strong></p>
-            <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[9]%>'>Add to Cart</a> </div>
+            <a href='catalogue.jsp?ADD=<%=arr1[9]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
           <figure><img src="img1.jpeg" alt=""></figure>
           <h5> Pizza </h5>
           <p class="p1">Yeasted flatbread generally topped with tomato sauce and cheese and baked in an oven<br>
             </p>
           <p class="p2"><strong class="color-2">Price: <%= arr[10]%></strong></p>
-          <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[10]%>'>Add to Cart</a> </div>
+          <a href='catalogue.jsp?ADD=<%=arr1[10]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
         <div>
           <div class="p4">
             <figure><img src="img11.jpeg" alt=""></figure>
             <h5>Uttapam</h5>
             <p class="p1">The dal and rice are subsequently ground and fermented.The surface is crisp and the inner layers are like idli.</p>
             <p class="p2"><strong class="color-2">Price: <%= arr[11]%></strong></p>
-            <a class="button-1" href='catalogue.jsp?ADD=<%=arr1[11]%>'>Add to Cart</a> </div>
-         
-        
-
-        
+            <a href='catalogue.jsp?ADD=<%=arr1[11]%>'><img src="images/addcart.png" alt="add" width=50" height="50"/></a> </div>
       </div>
     </div>
   </div>
@@ -208,7 +200,7 @@ String foodId = request.getParameter("ADD");
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://www.uietkuk.org/">UIETians</a> </div>
+      <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
   </div>
 </footer>
 <script type="text/javascript">Cufon.now();</script>

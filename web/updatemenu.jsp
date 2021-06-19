@@ -36,11 +36,8 @@
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-           
-            <li><a href="catalogue.jsp">Catalogue </a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cashcounter.jsp">Cash Counter</a></li>
+            <li><a class="active" href="admin.jsp">Menu</a></li>
           </ul>
         </nav>
       </div>
@@ -76,7 +73,7 @@
             ResultSet rs=null; %>   
             <form action="UpdateMenue" method="get">
              
-        <%    rs=connection.st.executeQuery("select * from menu where s_no="+a);
+        <%    rs=connection.st.executeQuery("select * from menu where Item_id="+a);
           while(rs.next() )
           {
               
@@ -90,7 +87,7 @@
                 <br> 
                 <b><h1><font color="purple">ITEM new price</font></h1></b>
                 <input type="number" name="price" >
-                <input type="hidden" name="s_no" value="<%= request.getParameter("edit") %>" >
+                <input type="hidden" name="Item_id" value="<%= request.getParameter("edit") %>" >
                  <b><input type="submit"  value="Submit" name="submit" /></b> 
                  
                 <%

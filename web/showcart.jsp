@@ -56,10 +56,10 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-           
-            <li><a href="catalogue.jsp">Catalogue </a></li>
-            
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.jsp">Menu</a></li>
+            <li><a href="catalogue.jsp">Specials </a></li>
+            <li><a href="faq.html">FAQ </a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -69,7 +69,7 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>Impressive Selection <span>for any Occasion</span></h2>
+        <h2><span>Your Cart</span></h2>
         <!--<div class="slider-wrapper">
           <div class="slider">
             <ul class="items">
@@ -135,7 +135,7 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
                 FoodDetail foodDetails = (FoodDetail) item.getItem();
                 %>
 				<tr>
-                   <td align="right" bgcolor=\"#ffffff\"> 
+                   <td align="center" bgcolor=\"#ffffff\"> 
                            <%= item.getQuantity() %>
                             </td> 
 
@@ -151,13 +151,11 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
                                 String str3=str2 + " , ";
                                str  +=  str3 ; %>
                             <td bgcolor=\"#ffffaa\" align="right"> 
-                           <%= foodDetails.getPrice() %>
-                            </td> 
+                           <%= foodDetails.getPrice() %>_</td> 
 
                            <td bgcolor=\"#ffffaa\"> 
                             <strong> 
-                            <a href='showcart.jsp?Remove=<%=foodDetails.getS_no()%>'> 
-                            Remove Item</a></strong> 
+                            <a href='showcart.jsp?Remove=<%=foodDetails.getS_no()%>'> Remove Item</a></strong> 
                             </td></tr>
 							<%
 							}
@@ -165,22 +163,22 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
 							%>
                                                         <% session.setAttribute("list",str); %>
                                
-							 <tr><td colspan=\"5\" bgcolor=\"#ffffff\">
+							 <tr><td colspan=\"6\" bgcolor=\"#ffffff\">
                         <br></td></tr>
 
                          <tr> 
-                        <td colspan=\"2\" align="right" 
-                        bgcolor=\"#ffffff\"> 
+                        <td colspan=\"2\" align="center" 
+                        bgcolor="yellow"> 
                         Total:</td> 
-                        <td bgcolor=\"#ffffaa\" align=\"right\"></td>
-                        <td bgcolor=\"#1aff8c\" align=\"right\"> 
-                    <%=   cart.getTotal()  %> </td> 
+                        <td bgcolor=\"#ffffaa\" align=\"center\"></td>
+                        <td bgcolor="yellow" align=\"center\"> 
+                    <%=   cart.getTotal()%>/-</td> 
                         </td><td><br></td></tr></table>
 
            
            
             <p> &nbsp; <p><strong><a href=
-                        'catalogue.jsp'>
+                        'menu.jsp'>
                         Continue Shopping</a> &nbsp; &nbsp;  
                         
                         <a href='
@@ -197,8 +195,8 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
            <font size=\"+2\">
                         There is nothing in your shopping cart.</font> 
                         <br> &nbsp; <br> 
-                        <center><a href='catalogue.jsp'>
-                        Back to the Catalog</a> </center>
+                        <center><a href='menu.jsp'>
+                        Back to the menu</a> </center>
 						<%
         }
 %>
@@ -211,7 +209,8 @@ foodDB =(FoodDb)getServletContext().getAttribute("examples.bookstore.database");
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://uietkuk.org/">UIETians</a> </div>
+    <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
+    
   </div>
 </footer>
 <!--<script type="text/javascript">Cufon.now();</script>

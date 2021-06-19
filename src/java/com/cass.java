@@ -6,9 +6,11 @@
 package com;
 
 import java.io.IOException;
-import java.util.Date;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -19,28 +21,39 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Ayush
+ * @author Abhay
  */
-public class cash extends HttpServlet {
+public class cass extends HttpServlet {
 
-   
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        HttpSession session= request.getSession(false);
-        String name = (String) session.getAttribute("name");
-        int total =  (int) session.getAttribute("total");
-        request.setAttribute("name",name);
-        request.setAttribute("total",total);
-         
-        String method=(String) session.getAttribute("transaction");
-        String status="Unpaid";
-        Date dat = new Date();
-        String date=dat.toString();
-        long transac=(long) Math.ceil(Math.random()*10000+1000);
-        String transaction="";
-        switch (method) {
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            HttpSession session= request.getSession(false);
+            String name= (String)session.getAttribute("Name");
+            String phone=(String)session.getAttribute("Phone");
+            String email=(String)session.getAttribute("Email");
+            String address=(String)session.getAttribute("Address");
+            String tableno=(String)session.getAttribute("Table");
+            int total=(int)session.getAttribute("total");
+            String list=(String)session.getAttribute("list");
+            String status="unpaid";
+            Date dat=new Date();
+            String date=dat.toString();
+            String transaction="";
+            String method=(String)session.getAttribute("transaction");
+            long transac=(long) Math.ceil(Math.random()*10000+1000);
+            switch (method) {
             case "creditcard":
                 {
                     String k="CRE";
@@ -72,23 +85,41 @@ public class cash extends HttpServlet {
                     break;
                 }
         }
-         Connection con1=(Connection)dbconnect.getConnect();
-         Statement st=con1.createStatement();
-         out.print("f");
-         String sql="insert into cashier (name,transaction,total,date,status) values('"+name+"','"+transaction+"',"+total+",'"+date+"','"+status+"')";
-         st.executeUpdate(sql);
-        session.setAttribute("transaction",transaction);
-        String str1=(String) session.getAttribute("list");
-         String sql1="insert into kitchen (name,transaction,list,status) values('"+name+"','"+transaction+"','"+str1+"','pending')";
-         st.executeUpdate(sql1);
-        
-        
-         
-         response.sendRedirect("end.jsp");
-        
             
+            
+            
+            out.print(" "+name);
+            out.println(" "+phone);
+            out.print(" "+email);
+            out.print(" "+address);
+            out.print(" "+tableno);
+            
+            out.print(" "+transaction);
+            out.print(" "+total);
+            out.print(" "+date);
+            out.print(" "+status);
+            
+            out.print(" "+list);
+            
+            Connection con1=(Connection)dbconnect.getConnect();
+            Statement st=con1.createStatement();
+            String sql="insert into customer (name,phone,email,address,table_no) values('"+name+"','"+phone+"','"+email+"','"+address+"',"+tableno+")";
+            String sql1="insert into payments (transaction,total,date,status) values('"+transaction+"',"+total+",'"+date+"','"+status+"')";
+            String sql2="insert into orders (list,order_status) values('"+list+",'pending')";
+            st.executeUpdate(sql);
+            st.executeUpdate(sql1);
+            st.executeUpdate(sql2);
+            
+            
+            session.setAttribute("date", date);
+            session.setAttribute("status", status);
+            
+            session.setAttribute("transaction", transaction);
+            response.sendRedirect("end.jsp");
+            
+         
         }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -105,7 +136,7 @@ public class cash extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(cash.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(cass.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -123,7 +154,7 @@ public class cash extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(cash.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(cass.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -138,4 +169,3 @@ public class cash extends HttpServlet {
     }// </editor-fold>
 
 }
-

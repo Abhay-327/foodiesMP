@@ -17,12 +17,12 @@
     <body>
          <%! // ResultSet rs=null;%>
            
-         <%= request.getParameter("trans") %>
+         <%= request.getParameter("trans1") %>
          <%
                    new connection();
                    try {
-                 connection.st.executeUpdate("update cashier set status='paid' where transaction='"+request.getParameter("trans")+"'");
-                //   rs=connection.st.executeQuery("select * from cashier where transaction='"+request.getParameter("trans")+"'");
+                 connection.st.executeUpdate("update payments set status='paid' where transaction='"+request.getParameter("trans1")+"'");
+                                    //   rs=connection.st.executeQuery("select * from cashier where transaction='"+request.getParameter("trans")+"'");
                  //  while(rs.next())
                //                          {
 

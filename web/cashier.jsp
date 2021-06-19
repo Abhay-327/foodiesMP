@@ -7,14 +7,12 @@
       function check(){
         var x=document.first.name.value;
         var y=document.first.phone.value;
+        var z=document.first.email.value;
         var str= y.toString();
         
-       
-        
-    
         var k = str.length;
         
-        if((x==="")&&(k<10)) 
+        if((x==="")&&(z==="")&&(k<10)&&(k>10)) 
         {  
             alert("Please enter right details");
            return false;
@@ -52,10 +50,10 @@
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="index.html">Menu</a></li>
-            <li><a href="catalogue.jsp">Catalogue </a></li>
-           
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.jsp">Menu</a></li>
+            <li><a href="catalogue.jsp">Specials </a></li>
+            <li><a href="faq.html">FAQ </a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -65,22 +63,11 @@
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>Impressive Selection <span>for any Occasion</span></h2>
-        <!--<div class="slider-wrapper">
-          <div class="slider">
-            <ul class="items">
-              <li> <img src="images/slider-img1.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img2.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img3.jpg" alt="" /> </li>
-            </ul>
-          </div>
-        </div>-->
-		
-		
+        <h2><span>submit your details </span></h2>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 <!--==============================content================================-->
 <section id="content">
   <div class="main">
@@ -110,31 +97,39 @@
             }
 			%>
 			 <p>Your total purchase amount is:
-                    <strong> <%= total%> </strong> 
+                    <strong> <b><%= total%> </b></strong> 
                     <p>To purchase the items in your shopping cart, 
                      please provide us with the following information:
 
-                    <form name="first" targer="_self" action="payment_1.jsp" method="post" autocomplete="off" onsubmit="return check()">
+                    <form name="first" target="_self" action="delivery.jsp" method="post" autocomplete="off" onsubmit="return check()">
                     
 
                     <table> 
                     <tr> 
                     <td><strong>Name:</strong></td> 
                     <td><input type="text" name="name"
-                     size="19" required="required" ></td> 
+                     size="30" pattern="^[A-Za-z \s*]+$" required="required" ></td> 
                     </tr>
 
                     <tr>
                     <td><strong>Phone Number:</strong></td> 
                     <td>
                     <input type="text" name="phone" 
-                           maxlength= ="10" required="required"></td> 
-                    </tr> 
+                           size="30" maxlength="10" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="10 digits" required="required"></td> 
+                    </tr>
+                    
+                    <tr>
+                    <td><strong>Email:</strong></td> 
+                    <td>
+                    <input type="text" name="email" 
+                           size="30" required="required"></td> 
+                    </tr>
+                    
+                    
 
                     <tr>
                     <td></td>
-                    <td><input type="submit"
-                    value="Submit Information"></td> 
+                    <td><input type="submit" value="Submit Information"></td> 
                     </tr>
 
                     </table>
@@ -147,7 +142,7 @@
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://uietkuk.org/">UIETians</a> </div>
+      <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
   </div>
 </footer>
 <!--<script type="text/javascript">Cufon.now();</script>

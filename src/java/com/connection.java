@@ -23,7 +23,7 @@ public static String inum=null;
             
      try{
             Class.forName("com.mysql.jdbc.Driver");
-             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodies","root","root");
+             conn=DriverManager.getConnection("jdbc:mysql://localhost/foodies","root","root");
             st = conn.createStatement();
      /*  st.execute("create table tcorders(Orderno Text,totalitems text,totalprice text,no text ,status text)");
             st.execute("create table corders(Orderno Text,totalitems text,totalprice text,no text ,status text)");

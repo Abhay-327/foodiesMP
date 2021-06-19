@@ -21,7 +21,7 @@ public class output {
             ResultSet rs=st.executeQuery("select * from menu");
   
    
-   int arr[]=new int[12];
+   int arr[]=new int[100];
    int i=1;
    while(rs.next()){
        System.out.println(rs.getInt(3));

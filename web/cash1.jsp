@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <% session.setAttribute("transaction","cash");; 
-       response.sendRedirect("cash");
+       response.sendRedirect("CASH.jsp");
     %>
     <head>
         

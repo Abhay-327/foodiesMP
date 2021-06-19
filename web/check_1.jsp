@@ -17,11 +17,13 @@
     <body>
          <%! // ResultSet rs=null;%>
            
-         <%= request.getParameter("trans") %>
+         <% String t=request.getParameter("trans");  %>
          <%
                    new connection();
                    try {
-                 connection.st.executeUpdate("update kitchen set status='delivered' where transaction='"+request.getParameter("trans")+"'");
+                       String str="Update orders set order_status='delivered' where cust_id IN"+"("+"Select cust_id from payments where transaction='"+t+"')";
+                       //Update orders set order_status="delivered" where cust_id IN"+"("+"Select cust_id from payments where transaction='"+t+"')
+                 connection.st.executeUpdate(str);
                 //   rs=connection.st.executeQuery("select * from cashier where transaction='"+request.getParameter("trans")+"'");
                  //  while(rs.next())
                //                          {
@@ -29,7 +31,7 @@
          //out.println(rs.getString("name"));
          //out.println(rs.getInt("total"));
            //                              }
-                  response.sendRedirect("kitchen.jsp");
+                  response.sendRedirect("cashcounter.jsp");
                    
                    }
                    catch(Exception e)

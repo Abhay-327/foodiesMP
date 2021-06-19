@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Catering.com</title>
+<title>Foodies | Menu</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -36,54 +36,30 @@
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="index.html">Menu</a></li>
-            <li><a href="catalogue.jsp">Catalogue </a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cashcounter.jsp">Cash Counter</a></li>
+            <li><a class="active" href="admin.jsp">Menu</a></li>
+            <li><a href="admin.html">Logout</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
   <div class="row-bot">
-    <div class="row-bot-bg">
-      <div class="main">
-        <h2>Impressive Selection <span>for any Occasion</span></h2>
-        <!--<div class="slider-wrapper">
-          <div class="slider">
-            <ul class="items">
-              <li> <img src="images/slider-img1.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img2.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img3.jpg" alt="" /> </li>
-            </ul>
-          </div>
-        </div>-->
-		
-		
-      </div>
-    </div>
-  </div>
+   
 </header>
 <!--==============================content================================-->
 <section id="content">
   <div class="main">
-    <div class="wrapper img-indent-bot">
-      <h5 align="center"> WELCOME  ADMIN  </h5>
-	    
-         
-      <div id="columnA">
-        <h2 align="center">Menu for You</h2>
-       <!-- <form action="OrderStatus">
-            -->
-      <div class="content bg1">
-          <table class="table">
+    <div align="center" class="wrapper img-indent-bot">
+        
+	
+          <table align="center" class="table">
             <%! ResultSet rs=null;%>
             <tr>
-                    <td bgcolor="black"  width="43 height="40"><b><font color="yellow"> serial No</font></b></td>
-                    <td bgcolor="black" width="120" height="40"><b><font color="yellow">food name</font></b></td>
-                    <td bgcolor="black" width="78" height="40"><b><font color="yellow">price</font></b></td>
-                   <td bgcolor="black" width="83" height="40"><b><font color="yellow">Click to edit price  </font></b></td>
+                    <td bgcolor="black"  width="43" height="40" align="center"><b><font color="yellow"> serial No</font></b></td>
+                    <td bgcolor="black" width="120" height="40" align="center"><b><font color="yellow">food name</font></b></td>
+                    <td bgcolor="black" width="43" height="40" align="center"><b><font color="yellow">price</font></b></td>
+                   <td bgcolor="black" width="83" height="40" align="center"><b><font color="yellow">Click to edit price  </font></b></td>
                 </tr>
            
             
@@ -97,20 +73,16 @@
                    while(rs.next())
                                          {
                 %>
-       <tr> <form action="updatemenu.jsp"><td bgcolor="ffb3d1" width="100"><b><font color="purple">
+       <tr> <form action="updatemenu.jsp"><td align="center" bgcolor="ffb3d1" width="60"><b><font color="purple">
                     <%
-                   out.print(rs.getInt("s_no"));
+                   out.print(rs.getInt("item_id"));
                     %></font></td>
                     <td bgcolor="#1aff8c" width="280" ><font color="red">
                             <%out.print(rs.getString("Item_name"));%></font></td>
-                    <td  bgcolor="yellow" width="180"><b><font color="">
+                    <td  align="center" bgcolor="yellow" width="50"><b><font color="">
                                 <%out.print(rs.getInt("Item_price"));%></font></b></td>
                    
-                    <td bgcolor="ffb3d1"><input type="submit"  name="edit" value="<%
-                   out.print(rs.getInt("s_no"));
-                    
-                   
-                   %>" /></b></td>
+                    <td align="center" width="50" bgcolor="ffb3d1"><input type="submit"  name="edit" value="<% out.print(rs.getInt("item_id"));%>" /></b></td>
          <!--           <td bgcolor="#ffb3d1" > <b><font color="purple">
                             Click to Deliver</font></b>
                     </td>
@@ -129,11 +101,11 @@
           
       
 
-      </div>
+     
       
 	  
 	  
-	  </div>
+	 
   </div>
 </section>
 <!--==============================footer=================================-->

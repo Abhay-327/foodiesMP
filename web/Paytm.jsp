@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Catering.com</title>
+<title>payment</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -25,40 +25,18 @@
     <div class="main">
       <div class="wrapper">
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
-        <nav>
-          <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-             <li><a href="catalogue.jsp">Catalogue </a></li>
-             <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
       </div>
     </div>
   </div>
   <div class="row-bot">
-    <div class="row-bot-bg">
-      <div class="main">
-        <h2>Impressive Selection <span>for any Occasion</span></h2>
-        <!--<div class="slider-wrapper">
-          <div class="slider">
-            <ul class="items">
-              <li> <img src="images/slider-img1.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img2.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img3.jpg" alt="" /> </li>
-            </ul>
-          </div>
-        </div>-->
-		
-		
-      </div>
-    </div>
+    
   </div>
 </header>
 <!--==============================content================================-->
 <section id="content">
   <div class="main">
     <div class="wrapper img-indent-bot">
-        <%session.setAttribute("transaction","paytm");; %>
+        <%session.setAttribute("transaction","paytm"); %>
        <img src="download.png">
        <p><b> You can pay via Phone number:</b></p>
        <p><font color="blue" size="16 px">  
@@ -70,8 +48,8 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <form action="cash" method="POST">
-                       <input type=submit value="GO">
+                   <form action="CASH.jsp" method="POST">
+                       <input type="submit" value="GO">
                        </form>
                    &nbsp;
            
@@ -82,7 +60,7 @@
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://uietkuk.org/">UIETians</a> </div>
+      <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
   </div>
 </footer>
 <!--<script type="text/javascript">Cufon.now();</script>

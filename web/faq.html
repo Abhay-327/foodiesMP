@@ -12,6 +12,19 @@
 <script src="js/Dynalight_400.font.js" type="text/javascript"></script>
 <script src="js/FF-cash.js" type="text/javascript"></script>
 <!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+<style>
+.collapsible {
+  cursor: pointer;
+}
+
+
+
+.content {
+  display: none;
+  overflow: hidden;
+}
+
+</style>
 </head>
 <body id="page5">
 <!--==============================header=================================-->
@@ -23,9 +36,8 @@
         <nav>
           <ul class="menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="new1.html">Admin</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="catalogue.jsp">Catalogue </a></li>
+            <li><a href="menu.jsp">Menu</a></li>
+            <li><a href="catalogue.jsp">Specials </a></li>
             <li><a class="active" href="faq.html">FAQ </a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -36,30 +48,76 @@
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-       <h2>Foodies Welcome <span> Taste the difference </span></h2>
+        <h2> <span> Frequently Asked Questions</span></h2>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 <!--==============================content================================-->
-<section id="content">
-  <div class="main">
-    <div class="container">
-      <h3>Frequently Asked Questions</h3>
+
+<section  >
+  <div >
+    <div class="container">  
+        <br><br>
+        
       <ul class="list-1">
-        <li> <a href="#"><strong>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</strong></a> <span>Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </span> </li>
-        <li> <a href="#"><strong>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet</strong></a> <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</span> </li>
-        <li> <a href="#"><strong>Nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</strong></a> <span>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</span> </li>
-        <li> <a href="#"><strong>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</strong></a> <span>Vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</span> </li>
-        <li> <a href="#"><strong>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</strong></a> <span>Et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </span> </li>
+        <li> <a class="collapsible"><strong style="color:#d53a03;">Can I edit my order?</Strong></a> 
+        <div class="content"><span >Your order can be edited before it reaches the restaurant.
+        You could contact customer <br>support team via call to do so. Once order is placed and restaurant starts preparing<br> your food,
+        you may not edit its contents</span></div> </li>
+        <hr><br>
+        
+        <li> <a class="collapsible"><strong style="color:#d53a03;">I want to cancel my order</strong></a> 
+        <div class="content"><span>We will do our best to accommodate your request if the order is not placed to the restaurant.<br> 
+        (Customer service number:  011-45235877) Please note that we will have a right to charge a <br>cancellation
+        fee up to full order value to compensate our restaurant and delivery partners if your <br>order has been confirmed.</span></div> </li>
+        <hr><br>
+        
+        <li> <a class="collapsible"><strong style="color:#d53a03;">Will 'Foodies' be accountable for quality/quantity?</strong></a>
+       <div class="content"> <span>Quantity and quality of the food is the restaurants' responsibility.
+         However in case of issues with<br> the quality or quantity, kindly submit your feedback and we will pass it on to the restaurant.</span></div> </li>
+         <hr><br>
+       
+         <li> <a class="collapsible"><strong style="color:#d53a03;">Is there a minimum order value?</strong></a> 
+        <div class="content"><span>We have no minimum order value and you can order for any amount. </span></div> </li>
+        <hr><br>
+       
+        <li> <a class="collapsible"><strong style="color:#d53a03;">Do you charge for delivery?</strong></a>
+        <div class="content"><span>Delivery fee varies from place to place and is applicable if order value is below a certain amount. </span></div> </li>
+        <hr><br>
+       
+        <li> <a class="collapsible"><strong style="color:#d53a03;">How long do you take to deliver?</strong></a>
+        <div class="content"><span>Standard delivery times vary by the location selected and prevailing conditions. 
+         Once you select your location, an estimated delivery time will be mentioned at time of placing order.</span></div> </li>
+         <hr><br>
+        
+         <li> <a class="collapsible"><strong style="color:#d53a03;">What are your delivery hours?</strong></a>
+        <div class="content"><span>Our delivery hours 10 am to 11 pm.</span></div> </li>
+        
       </ul>
     </div>
   </div>
 </section>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://www.uietkuk.org/">UIETians</a> </div>
+      <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
   </div>
 </footer>
 <script type="text/javascript">Cufon.now();</script>

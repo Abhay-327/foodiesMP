@@ -12,7 +12,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Catering.com</title>
+    <style>
+td {
+  border: 2px solid; 
+}
+
+</style>
+<title>Foodies | CashCounter</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -37,57 +43,47 @@
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="index.html">Menu</a></li>
-            <li><a href="catalogue.jsp">Catalogue </a></li>
-            
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="cashcounter.jsp">Cash Counter</a></li>
+            <li><a href="admin.jsp">Menu</a></li>
+            <li><a href="admin.html">Logout</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
   <div class="row-bot">
-    <div class="row-bot-bg">
-      <div class="main">
-        <h2>Impressive Selection <span>for any Occasion</span></h2>
-        <!--<div class="slider-wrapper">
-          <div class="slider">
-            <ul class="items">
-              <li> <img src="images/slider-img1.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img2.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img3.jpg" alt="" /> </li>
-            </ul>
-          </div>
-        </div>-->
-		
-		
-      </div>
-    </div>
+   
   </div>
 </header>
 <!--==============================content================================-->
 <section id="content">
   <div class="main">
     <div class="wrapper img-indent-bot">
-      <h5 align="center"> WELCOME  CASHIER  </h5>
+     
 	    
          
-      <div id="columnA">
-        <h5 align="center">CUSTOMER LIST FOR YOU TO ACCEPT PAYMENT</h5>
+      <div>
+       
        <!-- <form action="OrderStatus">
             -->
-      <div class="content bg1" align="center">
-          <table align="center" class="table">
+      <div align="center">
+        
+          <table align="center">
             <%! ResultSet rs=null;%>
+            
             <tr>
-                    <td bgcolor="black"  width="43 height="40"><b><font color="yellow">NAME</font></b></td>
-                    <td bgcolor="black" width="120" height="40"><b><font color="yellow">TRANSACTION ID</font></b></td>
-                    <td bgcolor="black" width="120" height="40"><b><font color="yellow">DATE</font></b></td>
-                    <td bgcolor="black" width="78" height="40"><b><font color="yellow">AMOUNT TO PAY</font></b></td>
-                   <td bgcolor="black" width="83" height="40"><b><font color="yellow">Click to COMPLETE PAYMENT  </font></b></td>
+                    <td align="center" bgcolor="black"  width="43 height="40"><b><font color="yellow">NAME</font></b></td>
+                    <td align="center" bgcolor="black"  width="43 height="40"><b><font color="yellow">PHONE</font></b></td>
+                    <td align="center" bgcolor="black" width="50" height="40"><b><font color="yellow">TRANSACTION ID</font></b></td>
+                    <td align="center" bgcolor="black"  width="43" height="40"><b><font color="yellow">ADDRESS</font></b></td>
+                    <td align="center" bgcolor="black"  width="43" height="40"><b><font color="yellow">TABLE</font></b></td>
+                    <td align="center" bgcolor="black" width="250" height="40"><b><font color="yellow">LIST</font></b></td>
+                    <td align="center" bgcolor="black" width="78" height="40"><b><font color="yellow">AMOUNT TO PAY</font></b></td>
+                    <td align="center" bgcolor="black" width="120" height="40"><b><font color="yellow">DATE</font></b></td>
+                    <td align="center" bgcolor="black" width="83" height="40"><b><font color="yellow">Click to COMPLETE PAYMENT  </font></b></td>
+                    <td align="center" bgcolor="black" width="83" height="40"><b><font color="yellow">Click to COMPLETE DELIVERY  </font></b></td>
                 </tr>
+                
            
             
                 
@@ -96,34 +92,30 @@
                  <%
                    new connection();
                    try{
-                   rs=connection.st.executeQuery("select * from cashier ORDER BY s_no DESC;");
+                   rs=connection.st.executeQuery("select c.name,c.phone,p.transaction,c.address,c.table_no,o.list,p.total,p.date,p.status,o.order_status from customer c, payments p, orders o where p.cust_id=c.cust_id and p.cust_id=o.cust_id order by p.cust_id DESC;");
                    while(rs.next())
                                          {
                 %>
-       <tr> <form action="check.jsp"><td bgcolor="ffb3d1" width="100"><b><font color="purple">
-                    <%
-                   out.print(rs.getString("name"));
-                    %></font></td>
-                    <td bgcolor="#1aff8c" width="280" ><font color="red">
-                            <%out.print(rs.getString("transaction"));%></font></td>
-                    <td bgcolor="#1aff8c" width="280" ><font color="red">
-                            <%out.print(rs.getString("date"));%></font></td>
-                   
-                    <td  bgcolor="yellow" width="180"><b><font color="">
-                                <%out.print(rs.getInt("total"));%></font></b></td>
-                         
-             
-                    <%if(rs.getString("status").equals("Unpaid")){%>
-                    
-     
-          <td bgcolor="ffb3d1"><input type="submit" value="PAY"></td>
-                  
-           <td><input type="hidden" value="<%out.print(rs.getString("transaction"));%>" name="trans">
-          </td>
-         <% }
+                <tr> <form action="check.jsp">
+           <td bgcolor="ffb3d1" width="300" align="center"><b><font color="purple"><%out.print(rs.getString("name"));%></font></td>
+           <td bgcolor="yellow" width="100" align="center"><b><font color="red"><%out.print(rs.getString("phone"));%></font></td>
+           <td bgcolor="#1aff8c" width="70" align="center"><font color="red"><%out.print(rs.getString("transaction"));%></font></td>
+           <td bgcolor="ffb3d1" width="250" align="center"><b><font color="purple"><%out.print(rs.getString("address"));%></font></td>
+           <td bgcolor="yellow" width="100" align="center"><b><font color="red"><%out.print(rs.getString("table_no"));%></font></td>
+           <td bgcolor="#1aff8c" width="350"><font color="red"><%out.print(rs.getString("list"));%></font></td>
+           <td  bgcolor="ffb3d1" width="50" align="center"><b><font color="purple"><%out.print(rs.getInt("total"));%></font></b></td>
+           <td bgcolor="yellow" width="400" align="center"><font color="red"><%out.print(rs.getString("date"));%></font></td>
+           
+           <%if(rs.getString("status").equals("unpaid"))
+           {%>
+           <td bgcolor="#1aff8c" align="center"><input type="submit" value="PAY"></td>
+           <td><input type="hidden" value="<%out.print(rs.getString("transaction"));%>" name="trans1"></td>
+            <% }
             else{%>
-               <td bgcolor="ffb3d1"><p>Paid</p></td>
+               <td bgcolor="#1aff8c" align="center"><p>Paid</p></td>
                        <%}%>
+                      
+                       
           <!--  <td bgcolor="ffb3d1"><input type="submit"  name="edit" value="<%
                 //   out.print(rs.getString("transaction"));
                     
@@ -132,7 +124,18 @@
          <!--           <td bgcolor="#ffb3d1" > <b><font color="purple">
                             Click to Deliver</font></b>
                     </td>
-         -->  </form> </tr>
+         -->  </form> 
+         <form action="check_1.jsp">
+             <%if(rs.getString("order_status").equals("pending"))
+            {%>
+            <td bgcolor="ffb3d1" align="center"><input type="submit" value="Deliver"></td>
+           <td><input type="hidden" value="<%out.print(rs.getString("transaction"));%>" name="trans"></td>
+         <% }
+            else{%>
+               <td bgcolor="ffb3d1" align="center"><p>Delivered</p></td>
+                       <%}%>
+         </form>
+                </tr>
             
                 <% }
                    
@@ -144,8 +147,8 @@
                    %>
                                 
         </table>
+          <br><br>
           
-      
 
       </div>
       

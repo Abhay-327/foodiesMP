@@ -1,0 +1,129 @@
+create table cashier
+(s_no int(11) primary key auto_increment,
+name varchar(20),
+transaction varchar(25),
+total int(11),
+date varchar(28),
+status varchar(20));
+
+create table kitchen
+(s_no int(11) primary key auto_increment,
+name varchar(20),
+transaction varchar(25),
+list varchar(200),
+status varchar(20));
+
+create table menu
+(Item_id int(11) primary key,
+Item_name varchar(100) not null,
+Item_price int(11));
+
+
+##################################################################
+##################################################################
+
+FINAL DATABASE
+
+create table customer
+(cust_id int(11) primary key auto_increment,
+name varchar(20),
+phone varchar(11),
+email varchar(40),
+address varchar(50),
+table_no varchar(2));
+	
+create table payments
+(cust_id int(11) primary key auto_increment,
+transaction varchar(25),
+total int(11),
+date varchar(28),
+status varchar(20));
+
+create table orders
+(cust_id int(11) primary key auto_increment,
+list varchar(200),
+order_status varchar(20));
+
+create table menu
+(Item_id int(11) primary key,
+Item_name varchar(100),
+Item_price int(11));
+
+create table feedback
+(name varchar(20),
+email varchar(40),
+feedback varchar(100));
+
+insert into menu(Item_id,Item_name,Item_price) values(1,"Cheese Burger",55);
+insert into menu(Item_id,Item_name,Item_price) values(2,"Sandwich",60);
+insert into menu(Item_id,Item_name,Item_price) values(3,"Chow mein",45);
+insert into menu(Item_id,Item_name,Item_price) values(4,"Hotdog",45);
+insert into menu(Item_id,Item_name,Item_price) values(5,"Samosa",10);
+insert into menu(Item_id,Item_name,Item_price) values(6,"Chilli Potato",35);
+insert into menu(Item_id,Item_name,Item_price) values(7,"Masala Dosa",72);
+insert into menu(Item_id,Item_name,Item_price) values(8,"White Sauce Pasta",80);
+insert into menu(Item_id,Item_name,Item_price) values(9,"Malai Chap",120);
+insert into menu(Item_id,Item_name,Item_price) values(10,"Pizza",150);
+insert into menu(Item_id,Item_name,Item_price) values(11,"Uttapam",100);
+insert into menu(Item_id,Item_name,Item_price) values(12,"Cheese Macroni",90);
+insert into menu(Item_id,Item_name,Item_price) values(13,"Samosa Chat (cold)",50);
+insert into menu(Item_id,Item_name,Item_price) values(14,"Papri Chat(cold)",40);
+insert into menu(Item_id,Item_name,Item_price) values(15,"Vegetable Samosa",20);
+insert into menu(Item_id,Item_name,Item_price) values(16,"Vegetable Pakora ",50);
+insert into menu(Item_id,Item_name,Item_price) values(17,"Vegetable Tikki",20);
+insert into menu(Item_id,Item_name,Item_price) values(18,"Paneer Pakora",50);
+insert into menu(Item_id,Item_name,Item_price) values(19,"Vegetable Momo (6 pcs)",60);
+insert into menu(Item_id,Item_name,Item_price) values(20,"Tandoori Roti",10);
+insert into menu(Item_id,Item_name,Item_price) values(21,"Paratha",15);
+insert into menu(Item_id,Item_name,Item_price) values(22,"Alu Parantha",20);
+insert into menu(Item_id,Item_name,Item_price) values(23,"Alu Parantha – Traditional",25);
+insert into menu(Item_id,Item_name,Item_price) values(24,"Chapatti",10);
+insert into menu(Item_id,Item_name,Item_price) values(25,"Poori (2)",20);
+insert into menu(Item_id,Item_name,Item_price) values(26,"Nan",10);
+insert into menu(Item_id,Item_name,Item_price) values(27,"Vegetable Curry",60);
+insert into menu(Item_id,Item_name,Item_price) values(28,"Chana Masala",60);
+insert into menu(Item_id,Item_name,Item_price) values(29,"Bengan Bhurta",65);
+insert into menu(Item_id,Item_name,Item_price) values(30,"Alu Mattar",55);
+insert into menu(Item_id,Item_name,Item_price) values(31,"Palak (Saag)",70);
+insert into menu(Item_id,Item_name,Item_price) values(32,"Paneer Butter Masala",90);
+insert into menu(Item_id,Item_name,Item_price) values(33,"Dal Makhani",80);
+insert into menu(Item_id,Item_name,Item_price) values(34,"Vegetable Biryani",120);
+insert into menu(Item_id,Item_name,Item_price) values(35,"Chicken Biryani",180);
+insert into menu(Item_id,Item_name,Item_price) values(36,"Shrimp Biryani",220);
+insert into menu(Item_id,Item_name,Item_price) values(37,"Lamb Biryani",220);
+insert into menu(Item_id,Item_name,Item_price) values(38,"Mughalai Biryani",260);
+insert into menu(Item_id,Item_name,Item_price) values(39,"Mulligatawny Soup",50);
+insert into menu(Item_id,Item_name,Item_price) values(40,"Coconut Soup",45);
+insert into menu(Item_id,Item_name,Item_price) values(41,"Tomato Soup",50);
+insert into menu(Item_id,Item_name,Item_price) values(42,"Kachumber Salad",50);
+insert into menu(Item_id,Item_name,Item_price) values(43,"IndianSalad",40);
+insert into menu(Item_id,Item_name,Item_price) values(44,"Plain Cheese Pizza",190);
+insert into menu(Item_id,Item_name,Item_price) values(45,"Capsicum, Onion, Mushroom Pizza",250);
+insert into menu(Item_id,Item_name,Item_price) values(46,"Tandoori Pizza",250);
+insert into menu(Item_id,Item_name,Item_price) values(47,"Super Veggie Pizza(Double Cheese)",265);
+insert into menu(Item_id,Item_name,Item_price) values(48,"White Sauce Pasta",120);
+insert into menu(Item_id,Item_name,Item_price) values(49,"Red Sauce Pasta",110);
+insert into menu(Item_id,Item_name,Item_price) values(50,"Mix Sauce Pasta",150);
+insert into menu(Item_id,Item_name,Item_price) values(51,"Plain Sandwich",120);
+insert into menu(Item_id,Item_name,Item_price) values(52,"Grilled Sandwich",150);
+insert into menu(Item_id,Item_name,Item_price) values(53,"Club Sandwich",170);
+insert into menu(Item_id,Item_name,Item_price) values(54,"Veg Hakka Noodles",140);
+insert into menu(Item_id,Item_name,Item_price) values(55,"Chilli Garlic Noodles",150);
+insert into menu(Item_id,Item_name,Item_price) values(56,"Pan Fried Noodles",190);
+insert into menu(Item_id,Item_name,Item_price) values(57,"French Fries",100);
+insert into menu(Item_id,Item_name,Item_price) values(58,"Chilli Cheese Toast",110);
+insert into menu(Item_id,Item_name,Item_price) values(59,"Garlic Bread with Cheese",130);
+insert into menu(Item_id,Item_name,Item_price) values(60,"Veg Cheese Burger",90);
+insert into menu(Item_id,Item_name,Item_price) values(61,"Gulab Jamun",30);
+insert into menu(Item_id,Item_name,Item_price) values(62,"Kheer",40);
+insert into menu(Item_id,Item_name,Item_price) values(63,"Kulfi",40);
+insert into menu(Item_id,Item_name,Item_price) values(64,"Mango Pudding",40);
+insert into menu(Item_id,Item_name,Item_price) values(65,"Gajar Halwa",60);
+insert into menu(Item_id,Item_name,Item_price) values(66,"Lassi",30);
+insert into menu(Item_id,Item_name,Item_price) values(67,"Mango Lassi",35);
+insert into menu(Item_id,Item_name,Item_price) values(68,"Mango Milkshake",30);
+insert into menu(Item_id,Item_name,Item_price) values(69,"Lemonade (Nimboo Pani)",20);
+insert into menu(Item_id,Item_name,Item_price) values(70,"Juices",25);
+insert into menu(Item_id,Item_name,Item_price) values(71,"Soda",25);
+	
+	

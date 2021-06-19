@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*,java.util.*,com.*,javax.servlet.*,java.io.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +28,10 @@
         <h1><a href="index.html">FooD<span>ies</span></a></h1>
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="index.html">Menu</a></li>
-            <li><a href="catalogue.jspl">Catalogue </a></li>
-            
-            
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.jsp">Menu</a></li>
+            <li><a href="catalogue.jsp">Specials </a></li>
+            <li><a href="faq.html">FAQ </a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -41,46 +41,34 @@
   <div class="row-bot">
     <div class="row-bot-bg">
       <div class="main">
-        <h2>Impressive Selection <span>for any Occasion</span></h2>
-        <!--<div class="slider-wrapper">
-          <div class="slider">
-            <ul class="items">
-              <li> <img src="images/slider-img1.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img2.jpg" alt="" /> </li>
-              <li> <img src="images/slider-img3.jpg" alt="" /> </li>
-            </ul>
-          </div>
-        </div>-->
-		
-		
+        <h2><span>Choose any of the payment methods</span></h2>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 <!--==============================content================================-->
 <section id="content">
   <div class="main">
     <div class="wrapper img-indent-bot">
-        <% String name=(String)request.getParameter("name");
-       
-       session.setAttribute("name",name);
-       
-       
+        <% 
+          
+            String name=(String)session.getAttribute("Name");  
+                String address=request.getParameter("address");
+                 String table=request.getParameter("table");
+                    session.setAttribute("Address",address);
+                    session.setAttribute("Table",table);
+            
        %>
       
-           <h1>Hello <%= name%> Choose any of the payment methods</h1>
-           <br><br>
-           <h2><b>After clicking on any of the payment method you won't be able to GO BACK</b></h2>
+       
+        <a style="font-size:24px" href="cash1.jsp">By Cash</a>
         <br><br>
-        <a href="cash1.jsp">By Cash</a>
-        <br><br>
-       <a href="Paytm.jsp">By Paytm</a>
+       <a style="font-size:24px" href="Paytm.jsp">By Paytm</a>
         <br><br>
       
-       
-        <a href="CreditCard.jsp">By Credit Card</a>
+        <a style="font-size:24px" href="CreditCard.jsp">By Credit Card</a>
         <br><br>
-        <a href="debitcard.jsp">By DebitCard</a>
+        <a style="font-size:24px" href="debitcard.jsp">By DebitCard</a>
         <br><br>
         
 	  </div>
@@ -89,7 +77,7 @@
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://uietkuk.org/">UIETians</a> </div>
+      <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
   </div>
 </footer>
 <!--<script type="text/javascript">Cufon.now();</script>

@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  *
- * @author HCLCDC
+ * @author Abhay
  */
-public class UpdateMenue extends HttpServlet {
+public class feed extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,30 +32,31 @@ public class UpdateMenue extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-             try {
-                 new connection();
-         Statement st=connection.conn.createStatement();
-      // String nm=request.getParameter("");
-       //out.print(nm);
-       //if(nm.equalsIgnoreCase("select"))
+            /* TODO output your page here. You may use following sample code. */
+            
+            String Name=request.getParameter("cname");
+            String Email=request.getParameter("cemail");
+            String Feedback=request.getParameter("cfeedback");
           
-         st.executeUpdate("update Menu set Item_price='"+request.getParameter("price")+"' where Item_id='"+request.getParameter("Item_id")+"'");
-         st.executeUpdate("update Menu set Item_name='"+request.getParameter("name")+"' where Item_id='"+request.getParameter("Item_id")+"'");
-         
-      // else{
-        //   st.executeUpdate("update Menu set iname='"+request.getParameter("name")+"',price='"+request.getParameter("price")+"',itype='"+nm+"' where ino='"+connection.inum+"'");
-      // }
-         response.sendRedirect("admin.jsp");
+             Connection con1=(Connection)dbconnect.getConnect();
+         Statement st=con1.createStatement();
     
-             
-        }     
-        catch(Exception e)
-        {
-            out.print(e);
-        }
+         String sql1="insert into feedback (name,email,feedback) values('"+Name+"','"+Email+"','"+Feedback+"')";
+         st.executeUpdate(sql1);
+        
+         response.sendRedirect("contact.html");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet feed</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet feed at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -69,7 +72,11 @@ public class UpdateMenue extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(feed.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -83,7 +90,11 @@ public class UpdateMenue extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(feed.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

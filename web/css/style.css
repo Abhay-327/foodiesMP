@@ -349,7 +349,7 @@ h6 {
 }
 .list-1 a:hover {
 	color:#d53a03;
-	text-decoration:underline;
+	
 }
 .list-1 span {
 	display:block;
@@ -401,7 +401,7 @@ h6 {
 .price-list a {
 	float: left;
 	text-decoration: none;
-	color: #7f7f7f;
+	color: #FFFFFF;
 }
 .price-list a:hover {
 	color:#81a60b;
@@ -412,9 +412,9 @@ h6 {
 	vertical-align: top;
 	line-height: 18px;
 	padding:6px 0 6px 20px;
-	background:url(../images/marker-2.png) 0 12px no-repeat;
+	
 }
-
+//background:url(../images/marker-2.png) 0 12px no-repeat;
 .link:hover {
 	text-decoration:underline;
 }
