@@ -72,8 +72,8 @@ td {
             <%! ResultSet rs=null;%>
             
             <tr>
-                    <td align="center" bgcolor="black"  width="43 height="40"><b><font color="yellow">NAME</font></b></td>
-                    <td align="center" bgcolor="black"  width="43 height="40"><b><font color="yellow">PHONE</font></b></td>
+                    <td align="center" bgcolor="black"  width="43" height="40"><b><font color="yellow">NAME</font></b></td>
+                    <td align="center" bgcolor="black"  width="43" height="40"><b><font color="yellow">PHONE</font></b></td>
                     <td align="center" bgcolor="black" width="50" height="40"><b><font color="yellow">TRANSACTION ID</font></b></td>
                     <td align="center" bgcolor="black"  width="43" height="40"><b><font color="yellow">ADDRESS</font></b></td>
                     <td align="center" bgcolor="black"  width="43" height="40"><b><font color="yellow">TABLE</font></b></td>
@@ -160,7 +160,7 @@ td {
 <!--==============================footer=================================-->
 <footer>
   <div class="main">
-    <div class="aligncenter"> <span>Copyright &copy; <a href="#">Domain Name</a> All Rights Reserved</span> Design by <a target="_blank" href="http://uietkuk.org/">UIETians</a> </div>
+      <div class="aligncenter"> <span>Copyright &copy; 2021 <a href="#">Foodies</a> All Rights Reserved</span> Design by <a target="_blank" href="https://iitmjp.ac.in/">IINTMians</a> </div>
   </div>
 </footer>
  
