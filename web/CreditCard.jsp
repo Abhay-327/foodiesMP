@@ -1,8 +1,3 @@
-<%-- 
-    Document   : CreditCard
-    Created on : 15 Apr, 2017, 8:11:01 PM
-    Author     : Ayush
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

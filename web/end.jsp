@@ -1,8 +1,4 @@
-<%-- 
-    Document   : end
-    Created on : 23 Apr, 2017, 5:29:03 PM
-    Author     : Ayush
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

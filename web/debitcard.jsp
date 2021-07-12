@@ -1,8 +1,4 @@
-<%-- 
-    Document   : debitcard
-    Created on : 15 Apr, 2017, 8:19:52 PM
-    Author     : Ayush
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

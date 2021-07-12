@@ -1,8 +1,4 @@
-<%-- 
-    Document   : check
-    Created on : 20 Apr, 2017, 4:55:58 PM
-    Author     : RAVI
---%>
+
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.connection"%>

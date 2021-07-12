@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cashcounter
-    Created on : 20 Apr, 2017, 10:39:33 AM
-    Author     : RAVI
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.connection"%>

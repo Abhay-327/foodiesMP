@@ -9,10 +9,7 @@ package com;
 
 
 
-/**
- *
- * @author Ayush
- */
+
 public class FoodDetail {
     private int s_no;
     private String name;

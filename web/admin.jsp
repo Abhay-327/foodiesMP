@@ -1,8 +1,4 @@
-<%-- 
-    Document   : catalogue
-    Created on : 9 Apr, 2017, 4:24:48 PM
-    Author     : RAVI
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.connection"%>

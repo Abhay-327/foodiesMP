@@ -6,10 +6,7 @@
 package com;
 import java.sql.*;
 
-/**
- *
- * @author Ayush
- */
+
 public class output {
 
     /**

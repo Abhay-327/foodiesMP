@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cash1
-    Created on : 20 Apr, 2017, 6:49:22 PM
-    Author     : Ayush
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

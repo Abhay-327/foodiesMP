@@ -6,10 +6,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Ayush
- */
+
 public class FoodDb {
    private HashMap database;
 		private ArrayList al;

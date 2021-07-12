@@ -9,10 +9,7 @@ import java.sql.DriverManager;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author NIKITA
- */
+
 public class connection {
     public static Connection conn=null;
 public static Statement st=null;

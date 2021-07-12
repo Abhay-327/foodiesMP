@@ -1,8 +1,4 @@
-<%-- 
-    Document   : updatemenu
-    Created on : 10 Apr, 2017, 7:43:12 PM
-    Author     : RAVI
---%>
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.connection"%>
  
